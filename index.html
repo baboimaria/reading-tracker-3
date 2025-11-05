@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reading Tracker 📚</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+</head>
+<body>
+  <div class="container">
+    <h1>Reading Tracker 📚</h1>
+
+    <form id="readingForm">
+      <div class="form-inputs">
+        <div class="form-group">
+          <label for="minutes">Minute citite:</label>
+          <input type="number" id="minutes" required min="1">
+        </div>
+
+        <div class="form-group">
+          <label for="pages">Pagini citite:</label>
+          <input type="number" id="pages" required min="1">
+        </div>
+      </div>
+
+      <button type="submit">Adaugă sesiune</button>
+    </form>
+
+    <div id="sessionsList">
+      <!-- Aici vor apărea sesiunile -->
+    </div>
+
+    <!-- Grafic -->
+    <canvas id="readingChart"></canvas>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>

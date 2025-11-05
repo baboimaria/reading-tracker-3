@@ -1,0 +1,109 @@
+/* Fonturi și fundal */
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: #ffe6f2; /* roz deschis */
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  padding: 50px 0;
+}
+
+.container {
+  background: #ffb3d9; /* roz mai închis */
+  padding: 20px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Titlu */
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+/* Formular */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.form-inputs {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+form input {
+  padding: 8px;
+  width: 80px;
+  border-radius: 8px;
+  border: 1px solid #ff66b2;
+  font-size: 14px;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+}
+
+form button {
+  padding: 8px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: #ff66b2;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Quicksand', sans-serif;
+}
+
+form button:hover {
+  background-color: #ff3385;
+}
+
+/* Lista sesiunilor */
+#sessionsList {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+  font-family: 'Quicksand', sans-serif;
+}
+
+#sessionsList div {
+  background-color: #ffcce6;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 10px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Grafic */
+canvas {
+  margin-top: 20px;
+  max-width: 100%;
+  height: 350px;
+  font-family: 'Quicksand', sans-serif;
+}
