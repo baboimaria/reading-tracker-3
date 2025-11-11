@@ -3,48 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reading Tracker 📚</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
+  <title>Reading Tracker</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h1>Reading Tracker 📚</h1>
+    <h1>📖 Reading Tracker</h1>
 
-    <form id="readingForm">
-      <div class="form-inputs">
-        <div class="form-group">
-          <label for="minutes">Minute citite:</label>
-          <input type="number" id="minutes" required min="1">
-        </div>
-
-        <div class="form-group">
-          <label for="pages">Pagini citite:</label>
-          <input type="number" id="pages" required min="1">
-        </div>
+    <!-- Secțiunea input -->
+    <div class="input-section">
+      <div class="inputs">
+        <label for="minutes">Minute citite</label>
+        <input type="number" id="minutes" min="0" />
+        <label for="pages">Pagini citite</label>
+        <input type="number" id="pages" min="0" />
       </div>
-
-      <button type="submit">Adaugă sesiune</button>
-    </form>
-
-    <div id="sessionsList">
-      <!-- Aici vor apărea sesiunile -->
+      <button id="add-session">➕ Adaugă sesiune</button>
     </div>
 
-    <!-- Grafic -->
+    <!-- Select tip perioadă -->
+    <div class="period-buttons">
+      <button class="period-btn" data-type="week">Săptămână</button>
+      <button class="period-btn" data-type="month">Lună</button>
+      <button class="period-btn" data-type="year">An</button>
+    </div>
+
+    <!-- Navigare perioadă cu săgeți de-o parte și de alta -->
+    <div class="period-selection">
+      <button id="prev-period">⬅️</button>
+      <select id="period-value"></select>
+      <button id="next-period">➡️</button>
+    </div>
+
     <canvas id="readingChart"></canvas>
+
+    <div class="totals">
+      <p id="total-summary">Total: 0 minute | 0 pagini</p>
+    </div>
+
+    <button id="toggle-sessions" class="toggle-btn">📘 Vezi/Ascunde sesiuni</button>
+    <div id="session-list" class="hidden"></div>
   </div>
 
-  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
