@@ -201,3 +201,51 @@ function updateChart(){
 
 populatePeriodValues();
 updateDisplay();
+
+// În toggleBtn.addEventListener deja existent, adăugăm
+const prevSessionContainer = document.getElementById("previous-session-container");
+
+toggleBtn.addEventListener("click", () => {
+  sessionList.classList.toggle("hidden");
+  prevSessionContainer.classList.toggle("hidden");
+});
+
+// Adăugare sesiune anterioară
+document.getElementById("add-prev-session").addEventListener("click", () => {
+  const date = document.getElementById("prev-session-date").value;
+  const minutes = parseInt(document.getElementById("prev-session-minutes").value) || 0;
+  const pages = parseInt(document.getElementById("prev-session-pages").value) || 0;
+
+  if(!date) return alert("Selectează o dată!");
+  
+  const d = new Date(date);
+  const session = {
+    id: Date.now(),
+    date: date,
+    week: getWeekNumber(d),
+    month: d.getMonth(),
+    year: d.getFullYear(),
+    minutes,
+    pages
+  };
+
+  sessions.push(session);
+  localStorage.setItem("sessions", JSON.stringify(sessions));
+
+  document.getElementById("prev-session-date").value = "";
+  document.getElementById("prev-session-minutes").value = "";
+  document.getElementById("prev-session-pages").value = "";
+
+  updateDisplay();
+});
+toggleBtn.addEventListener("click", () => {
+  sessionList.classList.toggle("hidden");
+  prevSessionContainer.classList.toggle("hidden");
+
+  // Actualizăm lista și graficul când secțiunea devine vizibilă
+  if(!sessionList.classList.contains("hidden")){
+    displaySessions();
+    updateTotals();
+    updateChart();
+  }
+});

@@ -6,6 +6,8 @@
   <title>Reading Tracker</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="icon" type="image/png" href="icon.png">
 </head>
 <body>
   <div class="container">
@@ -45,8 +47,15 @@
     <button id="toggle-sessions" class="toggle-btn">📘 Vezi/Ascunde sesiuni</button>
     <div id="session-list" class="hidden"></div>
   </div>
+<div id="previous-session-container" class="hidden">
+  <input type="date" id="prev-session-date" />
+  <input type="number" id="prev-session-minutes" placeholder="Minute citite" min="0" />
+  <input type="number" id="prev-session-pages" placeholder="Pagini citite" min="0" />
+  <button id="add-prev-session">➕ Adaugă sesiune anterioară</button>
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
+
